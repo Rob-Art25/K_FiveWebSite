@@ -9,6 +9,7 @@ This is my first website, where i put all my knowledge about
 - HTML
 - CSS
 - and Bootstrap5
+
 In this website i pretend to show all my skills, (IT or not)
 
 - Software Develop
