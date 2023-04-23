@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Bootstrap CSS -->
+
+<link rel="shortcut icon" href="/resources/images/logo.jpg" >
+
+<link rel="stylesheet" href="/css/animaciones.css">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>Music</title>
+</head>
+<body style="background-image: url('/resources/images/Skills/Piano.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+
+<!-- MENU DE NAVEGACION -->
+	<nav class="navbar navbar-expand-lg sticky-top" style="border: 5px silver inset; border-radius: 100px; margin-left: 5px; margin-right: 2.5px; margin-top: 5px; background-color: #042f66;">
+		<a id="navButton" class="navbar-brand" th:href="@{/index}" style="font-size: 20px; font-family: blader3D; border: 5px outset silver; border-radius: 100px; background-color: transparent; text-decoration: none; color: white;">
+		 <span><i><b> K'5 </b></i></span></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon" id="navButton" style="color: white;"><span> . . . </span></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-between" id="navbarNav">			
+			<ul class="navbar-nav">
+				<li class="nav-item active" style= "background-color: transparent; border: 5px outset silver; border-radius: 100px;">
+				<a id= "navButton" class="nav-link"
+					th:href="@{/game/games}" 
+						style="text-decoration: none; font-size: 15px; 
+							font-family: pixel; color: white;"> 
+							<span ><i><b>GAMES</b></i> 🎮</span>
+				</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/index}"></a>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
+				<li class="nav-item active" style= "background-color: transparent; border: 5px outset silver; border-radius: 100px;">
+					<a id="navButton" class="nav-link"	th:href="@{/book/books}" 
+						style="text-decoration: none; font-size: 10px; 
+							font-family: cursiva2; color: white; padding-top: 20%;">
+							<span><i><b>BOOKS</b></i> 📘 </span></a>
+				</li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/index}"></a>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
+				<li class="nav-item active" style= "background-color: transparent; border: 5px inset silver; border-radius: 100px;">
+					<a id="navButton" class="nav-link"	th:href="@{/song/music}" style="text-decoration: underline; 
+					font-size: 20px; font-family: blader3D; color: white;">
+					<span><i><b>MUSIC</b></i>  🎹 </span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/index}"></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div class="alert alert success" th:if="${success != null} " th:text="${success}" role='alert'></div>
+
+<!-- <h1 style= "text-align: center; font-size: 50px; text-decoration: underline; color: green; border: 25px inset orange; border-radius: 25px; background-color: #e05526;"><i> MUSIC</i> 🎹</h1>-->
+	
+	<div class="d-flex justify-content-center mt-5" style="text-align: center;">
+			<iframe width="560" height="315"
+				src="https://www.youtube.com/embed/xlODn_t9ekQ?autoplay=1"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen></iframe>
+	</div>
+	
+	<br>
+	
+	<div class ="container">
+		<h1 class="text-secondary border border-success border-top-0 border-left-0 border-right-0" style="font-family: blader3D;">
+			Lista de Canciones:
+		</h1>
+		<table class="table table-striped table-bordered" >
+			<thead class="thead-inverse thead-dark">
+				<tr style="font-family: blader3D;">
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>Descripción</th>
+					<th>Precio</th>
+					<th>Ver</th>
+					<th>Editar</th>
+					<th>Eliminar</th>
+				</tr>
+			</thead>
+			<tbody style="color: white;">
+				<!-- 			para iterar una lista con foreach en thymeleaf -->
+				<!-- 			se usa th:each -->
+				<tr th:each="s : ${listaCanciones}" style="font-family: blader;">
+					<td th:text="${s.ID}"></td>
+					<td th:text="${s.nombre}"></td>
+					<td th:text="${s.descripcion}"></td>
+					<td th:text="${s.precio}"></td>															
+					<td>
+					 <!--  Agregar ID's a las Páginas Específicas... (ya está!!!)--> 
+					<span th:if="${s.ID} != null">
+						<a class="btn btn-primary btn-md" th:href="@{/song/song/} + ${s.ID}"></a>
+					</span>				
+					</td>
+					<td>
+						<a class="btn btn-primary btn-xs" th:href="@{/song/editarSong/}+ ${s.ID}" th:text="'Editar'"></a>
+					</td>
+					<td>
+						<a class="btn btn-danger btn-xs" th:href="@{/song/eliminarSong/} + ${s.ID}" th:text="'Eliminar'"
+							onclick="return confirm('Estas seguro que deseas eliminar la canción?');">
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Agregar el control de Admin -->			
+			<a id="navButton" class="btn btn-primary" th:href="@{/song/registrarSong}" style="border: 2.5px outset silver; background-color: #042f66; border-radius: 20px; font-family: blader3D;"> 
+				<span>Agregar Canción</span>
+			</a>			
+	</div>
+		
+		
+	<div class="d-flex justify-content-center">
+			
+		<div class="d-flex align-items-end">
+			<p style="color: orange; font-size: 18px; font-family: blader3D;">
+				<b>
+					Tecnologías Utilizadas:
+				</b>
+			</p>
+			<p>
+				<img src="/resources/images/Skills/FL_Studio_Icon.png"
+					alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+			</p>
+			<p>
+				<img src="/resources/images/Skills/ACID_Icon.png"
+					alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+			</p>			
+		</div>
+	</div>
+	
+	
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+
+<footer style="color: #042f66; text-align: center; font-family: blader;">	
+	<p>Contáctame por aquí:</p>
+	<div id="Contacto">		
+		<a href="https://soundcloud.com/kfive5"><img src="/resources/images/Skills/Soundcloud_Logo.png"
+			alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+		</a>				
+		<a href="https://www.facebook.com/profile.php?id=100090545993612"><img src="/resources/images/Facebook_logo.png"
+			alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+		</a>
+		<a href="https://open.spotify.com/artist/2Np5MrsDoRTQbNXMMPL2fN?si=fD1XtC8xQkCt2JpNZuNYpg"><img src="/resources/images/Skills/Spotify_logo.png"
+			alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+		</a>	
+	</div>
+	
+	<p style="font-family: blader;">
+		Roberto Arteaga, aka. K'Five <br>
+		Todos los Derechos Reservados. <br>
+		2023
+	</p>
+</footer>
+</html>

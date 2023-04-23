@@ -1,0 +1,120 @@
+#navButton 
+{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	
+	animation-name: buttonAppear;
+	animation-duration: 5s;
+	transition: .3s ease all;
+	overflow: hidden;
+	position: relative;
+}
+
+#navButton span
+{
+	transition: .3s;
+	position: relative;
+	z-index: 2;
+}
+
+/* Animaciones de los Botones*/
+#navButton::after 
+{
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	position: absolute;
+	top: -120px;
+	transition: .25s ease-in-out all; 
+}
+
+/*Activa la Animación*/
+#navButton:hover::after 
+{
+	top: 0px;
+	border-radius: 25px;
+	border: inset;
+	animation-name: borderChange;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	transition: .25s ease-in-out all;
+}
+
+h1 
+{
+	animation-name: textAppear;
+	animation-duration: 3s;
+	transition: .5s ease-in-out all;
+}
+
+
+/*Animations...*/
+
+@keyframes buttonAppear
+{
+	0% {opacity: 0%;}
+	100% {opacity: 100%;}
+}
+
+@keyframes borderChange
+{
+	0% {border: inset;}
+	25% {border: ridge silver;}
+	50% {border: groove;}
+	75% {border: ridge silver;}
+	100% {border: outset;}
+}
+
+@keyframes textAppear
+{
+	0% {opacity: 0%;}
+	100% {opacity: 100%;}
+}
+
+/* 
+	cargar fuentes...
+*/
+@font-face 
+{
+
+	font-family: pixel;
+	src: url('/resources/fonts/pixelmix.ttf');
+}
+
+@font-face
+{
+	font-family: cursiva1;
+	src: url('/resources/fonts/HANDC.ttf');
+}
+
+@font-face
+{
+	font-family: cursiva2;
+	src: url('/resources/fonts/cursif.ttf');
+}
+
+@font-face
+{
+	font-family: sticker;
+	src: url('/resources/fonts/Sticker.ttf');
+}
+
+@font-face
+{
+	font-family: sticker2;
+	src: url('/resources/fonts/StickerTransparent.ttf');
+}
+
+@font-face
+{
+	font-family: blader;
+	src: url('/resources/fonts/Blader.ttf');
+}
+
+@font-face
+{
+	font-family: blader3D;
+	src: url('/resources/fonts/BladerExtended3D.ttf');
+}

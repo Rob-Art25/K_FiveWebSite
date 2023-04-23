@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Bootstrap CSS -->
+
+<link rel="shortcut icon" href="/resources/images/logo.jpg" >
+
+<link rel="stylesheet" href="/css/animaciones.css">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>Super Purple Ball</title>
+</head>
+<body style="background-color: grey;">
+
+	<nav class="navbar navbar-expand-lg sticky-top" style="border: 5px silver outset; border-radius: 100px; margin-left: 5px; margin-right: 2.5px; margin-top: 5px; background-color: #042f66;">
+		<a id="navButton" class="navbar-brand" th:href="@{/index}" style="font-size: 20px; font-family: blader3D; border: 5px outset silver; border-radius: 100px; background-color: transparent; text-decoration: none; color: white;">
+		 <span><i><b> K'5 </b></i></span></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon" id="navButton" style="color: white;"><span> . . . </span></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-between" id="navbarNav">			
+			<ul class="navbar-nav">
+				<li class="nav-item active" style= "background-color: transparent; border: 5px inset silver; border-radius: 100px;">
+				<a id= "navButton" class="nav-link"
+					th:href="@{/game/games}" 
+						style="text-decoration: underline; font-size: 18px; 
+							font-family: pixel; color: white;"> 
+							<span ><i><b>GAMES</b></i> 🎮</span>
+				</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/index}"></a>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
+				<li class="nav-item active" style= "background-color: transparent; border: 5px outset silver; border-radius: 100px;">
+					<a id="navButton" class="nav-link"	th:href="@{/book/books}" 
+						style="text-decoration: none; font-size: 10px; 
+							font-family: cursiva2; color: white; padding-top: 25%;">
+							<span><i><b>BOOKS</b></i> 📘 </span></a>
+				</li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/index}"></a>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
+				<li class="nav-item active" style= "background-color: transparent; border: 5px outset silver; border-radius: 100px;">
+					<a id="navButton" class="nav-link"	th:href="@{/song/music}" style="text-decoration: none; 
+					font-size: 15px; font-family: blader3D; color: white;">
+					<span><i><b>MUSIC</b></i>  🎹 </span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/index}"></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+		
+	
+	
+	<div class="d-flex justify-content-between">
+	<div id="carouselExampleInterval" class="carousel slide"
+		data-bs-ride="carousel" style="background-color: grey; height: 500px; width: 720px;">
+		<div class="carousel-inner">
+			<div class="carousel-item active" data-bs-interval="3000">
+				<img src="/resources/images/Prometheus_Logo.jpeg"
+					style="height: 500px; width: 720px"
+					alt="No está disponible la imagen">
+			</div>
+			<div class="carousel-item" data-bs-interval="3000">
+				<img src="/resources/images/Captura_SPB_1.png"
+					style="height: 500px; width: 720px"
+					alt="No está disponible la imagen">
+			</div>
+			<div class="carousel-item" data-bs-interval="3000">
+				<img src="/resources/images/Captura_SPB_2.png"
+					style="height: 500px; width: 720px"
+					alt="No está disponible la imagen">
+			</div>
+			<div class="carousel-item" data-bs-interval="3000">
+				<img src="/resources/images/Captura_SPB_3.png"
+					style="height: 500px; width: 720px"
+					alt="No está disponible la imagen">
+			</div>
+			<div class="carousel-item" data-bs-interval="3000">
+				<img src="/resources/images/Captura_SPB_4.png"
+					style="height: 500px; width: 720px"
+					alt="No está disponible la imagen">
+			</div>
+			<div class="carousel-item" data-bs-interval="3000">
+				<img src="/resources/images/Captura_SPB_5.png"
+					style="height: 500px; width: 720px"
+					alt="No está disponible la imagen">
+			</div>
+			<div class="carousel-item" data-bs-interval="3000">
+				<img src="/resources/images/Captura_SPB_6.png"
+					style="height: 500px; width: 720px"
+					alt="No está disponible la imagen">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button"
+			data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+				class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button"
+			data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span> <span
+				class="visually-hidden">Next</span>
+		</button>
+	</div>
+	<div style="border: 2.5px outset violet; border-radius: 5px; margin-left: 5%;">
+		<p style="font-size: 18px;  color: rebeccapurple;">
+			<b>
+				Super Purple Ball es mi primer juego desarrollado en conjunto con mi propio
+				estudio, Prometheus Studio, le dedicamos mucho tiempo a pulir
+				mécanicas, fondos, animaciones y yo obviamente a la música. Sí te
+				interesa probarlo, te dejo aquí el link para que lo descargues:
+			</b>
+		</p>
+	</div>
+	</div>
+	<div class="d-flex justify-content-center">
+			
+		<div class="d-flex align-items-end">
+			<p style="color: red; font-size: 18px;">
+				<b>
+					Tecnologías Utilizadas:
+				</b>
+			</p>
+			<p>
+				<img src="/resources/images/Unity_Logo.png"
+					alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+			</p>
+			<p>
+				<img src="/resources/images/C_Logo.png"
+					alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+			</p>
+			<p>
+				<img src="/resources/images/Krita_Logo.png"
+					alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+			</p>
+			<p>
+				<img src="/resources/images/Visual_Studio_Logo.png"
+					alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+			</p>
+		</div>
+	</div>	
+	<!-- Bloque de Caja de Botones de Descarga -->
+	<div id="downloadButtonsBox" style="text-align: center">
+		<a class="btn btn-primary" style="text-align: center" href="#">Descargar
+			<img src="/resources/images/Android.png"
+			style="width: 50px; height: 50px" />
+		</a> <a class="btn btn-primary" style="text-align: center" href="#">Descargar
+			<img src="/resources/images/Windows.png"
+			style="width: 50px; height: 50px" />
+		</a>
+	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+<footer style="color: blue; text-align: center;">	
+	<p>Contáctame por aquí:</p>
+	<div id="Contacto">		
+		<a href="https://github.com/RobertoArteaga25?tab=repositories"><img src="/resources/images/Git_Logo.png"
+			alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+		</a>				
+		<a href="https://www.facebook.com/profile.php?id=100090545993612"><img src="/resources/images/Facebook_logo.png"
+			alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+		</a>		
+	</div>
+	
+	<p>
+		Roberto Arteaga, aka. K'Five, Todos los Derechos Reservados.
+	</p>
+</footer>
+</html>
