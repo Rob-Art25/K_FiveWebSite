@@ -118,3 +118,58 @@ h1
 	font-family: blader3D;
 	src: url('/resources/fonts/BladerExtended3D.ttf');
 }
+
+#ContentAppearLeft
+{
+	animation-name: contentAppearLeft;
+	animation-duration: 5s;
+	transition: .5s ease all;
+	overflow: hidden;
+	position: relative;
+	right: 0px;
+}
+
+#ContentAppearLeft2
+{
+	animation-name: contentAppearLeft;
+	animation-duration: 5s;
+	animation-delay: 1.5s;	
+	transition: .5s ease all;
+	overflow: hidden;
+	position: relative;
+	right: 0px;
+}
+
+@keyframes contentAppearLeft
+{
+	0% {opacity: 0%; 
+	right: -250px;}
+	
+	25% {delay: .5s;}
+	
+	50% {right: 0px;}
+	
+	100% {opacity: 100%;}
+}
+
+#ContentAppearRight
+{
+	animation-name: contentAppearRight;
+	animation-duration: 2.5s;
+	transition: 2.5s ease all;
+	overflow: hidden;
+	position: relative;
+	left: 0px;
+}
+
+@keyframes contentAppearRight
+{
+	0% {opacity: 0%; 
+	left: -250px;}
+	
+	25% {delay: 3s;}
+	
+	50% {left: 0px;}
+	
+	100% {opacity: 100%;}
+}

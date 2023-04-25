@@ -66,7 +66,7 @@ xmlns:th="http://www.thymeleaf.org">
 	<br>
 	<hr style="color: orange;">
 
-<div class ="container">
+<div class ="container" id="ContentAppearLeft">
 		<h1 class="text-secondary border border-success border-top-0 border-left-0 border-right-0" style="font-family: cursiva2;">
 			Lista de Libros:
 		</h1>
@@ -101,7 +101,7 @@ xmlns:th="http://www.thymeleaf.org">
 					</td>
 					<td>
 						<a class="btn btn-danger btn-xs" th:href="@{/book/eliminarBook/} + ${b.ID}" th:text="'Eliminar'"
-							onclick="return confirm('Estas seguro que deseas eliminar la canción?');">
+							onclick="return confirm('Estas seguro que deseas eliminar el libro?');">
 						</a>
 					</td>
 				</tr>

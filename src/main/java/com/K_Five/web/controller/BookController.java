@@ -85,7 +85,7 @@ public class BookController
 		// Llamar al Dao para editar:
 		Book book = null;
 		
-		model.put("titulo", "Editar Canción");
+		model.put("titulo", "Editar Libro");
 		
 		if(id > 0)
 		{
@@ -96,7 +96,7 @@ public class BookController
 			return "/books";
 		}
 		
-		model.put("cancionNueva", book);
+		model.put("libroNuevo", book);
 		
 		return "Books/BookRegister";
 	}
