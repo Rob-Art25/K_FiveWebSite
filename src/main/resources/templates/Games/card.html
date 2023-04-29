@@ -8,6 +8,7 @@ xmlns:th="http://www.thymeleaf.org">
 <link rel="shortcut icon" href="/resources/images/logo.jpg" >
 
 <link rel="stylesheet" href="/css/animaciones.css">
+<link rel="stylesheet" href="/css/efectos.css">
 
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -15,7 +16,7 @@ xmlns:th="http://www.thymeleaf.org">
 	crossorigin="anonymous">
 <title th:text="${juego}">Game Card</title>
 </head>
-<body style="background-color: grey;">
+<body style="background-image: url('/resources/images/Skills/Control.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; background-attachment: fixed;">
 
 <nav class="navbar navbar-expand-lg sticky-top" style="border: 5px silver outset; border-radius: 100px; margin-left: 5px; margin-right: 2.5px; margin-top: 5px; background-color: #042f66;">
 		<a id="navButton" class="navbar-brand" th:href="@{/index}" style="font-size: 20px; font-family: blader3D; border: 5px outset silver; border-radius: 100px; background-color: transparent; text-decoration: none; color: white;">
@@ -58,34 +59,31 @@ xmlns:th="http://www.thymeleaf.org">
 				</li>
 			</ul>
 		</div>
-		<img th:if="${image}" th:src="@{'/book/uploads/' + ${image}}" alt="Card image cap" style="max-height: 70px; width: 66px;" th:text="${juego}">
+		<img th:if="${image}" th:src="@{'/game/uploads/' + ${image}}" alt="Card image cap" style="height: 2.5%; width: 2.5%;">
+		<span style="font-family: pixel; color: rebeccapurple; font-size: 15px;" th:text="${juego}"></span>
 	</nav>
 	
-	
-
-<hr style="color: cyan;">
 <!-- Card... poner imagen... -->
-	<div id="container" class="container d-flex justify-content-center" style="width: 720px; height: 666px; border-radius: 20px; border: 25px outset purple; background-color: rebeccapurple;">
+	
+	<div id="container" class="container d-flex justify-content-center formcolor mt-5 mb-5" style="width: 25%; height: 25%;">
 	<div class="card-group justify-content-center" style="text-align: center;">
-		<div class="card d-flex align-items-center">
-		<img class="card-img-top " th:if="${image}" th:src="@{'/game/uploads/' + ${image}}" alt="Card image cap" style="max-height: 370px; width: 666px;"> <!-- agregar imágenes como atributo del producto/juego -->
-		<div class="card-body align-items-center">
-			<h5 class="card-title" th:text="${juego}"></h5>
-			<h6 style="color: blue;" class="card-title" th:text="${descripcion}"></h6>
-			<p style="color: green;" class="card-text" th:text="'$' + ${precio}"></p>
+		<div class="card d-flex align-items-center" style=" background-color: transparent;">
+		<img class="card-img-top " th:if="${image}" th:src="@{'/game/uploads/' + ${image}}" alt="Card image cap" style="height: 50%; width: 75%;">
+		<div class="card-body align-items-center" style=" background-color: transparent;">
+			<h5 class="card-title" th:text="${juego}" style="font-family: pixel; color: rebeccapurple;"></h5>
+			<h6 style="color: blue; font-family: pixel;" class="card-title" th:text="${descripcion}"></h6>
+			<p style="color: green; font-family: pixel;" class="card-text" th:text="'$' + ${precio}" ></p>
 		</div>
-		<div class="card-footer">
-			<small class="text-muted" th:text="${juego}"></small>
+		<div>
+			<a type="button" class="btn btn-primary btn-sm" th:href="${link}" style="font-family: pixel; color: rebeccapurple;">
+				<img src="/resources/images/Android.png"
+				style="width: 50px; height: 50px"/> Descargar
+			</a>
 		</div>
-		<a type="button" class="btn btn-warning btn-sm"
-			th:href="@{/game/editar/} + ${ID}" th:text="Editar">
-		</a> 
-		<a type="button" class="btn btn-danger btn-sm" th:href="@{/game/eliminar/} + ${ID}"
-			th:text="Eliminar" onclick="return confirm('Estas seguro que deseas eliminar el producto?');">
-		</a>
 		</div>
 	</div>
 	</div>
+	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -97,4 +95,22 @@ xmlns:th="http://www.thymeleaf.org">
 		crossorigin="anonymous"></script>
 
 </body>
+
+<footer style="color: #042f66; text-align: center; font-family: pixel;">	
+	<p style="color: black;">Contactame por aqui:</p>
+	<div id="Contacto">		
+		<a href="https://github.com/RobertoArteaga25?tab=repositories"><img src="/resources/images/Git_Logo.png"
+			alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+		</a>				
+		<a href="https://www.facebook.com/profile.php?id=100090545993612"><img src="/resources/images/Facebook_logo.png"
+			alt="No se encontró la Imagen" style="width: 50px; height: 50px;">
+		</a>		
+	</div>
+	
+	<p>
+		Roberto Arteaga, aka. K'Five, <br>
+		Todos los Derechos Reservados. <br>
+		2023
+	</p>
+</footer>
 </html>

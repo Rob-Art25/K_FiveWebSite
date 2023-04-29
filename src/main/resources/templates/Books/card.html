@@ -75,12 +75,6 @@ xmlns:th="http://www.thymeleaf.org">
 			<h6 style="color: blue; font-family: cursiva2;" class="card-title" th:text="${descripcion}"></h6>
 			<p style="color: green; font-family: cursiva2;" class="card-text" th:text="'$' + ${precio}" ></p>
 		</div>
-		<a type="button" class="btn btn-warning btn-sm" style="font-family: cursiva2;"
-			th:href="@{/book/editarBook/} + ${ID}" th:text="Editar">
-		</a> 
-		<a type="button" class="btn btn-danger btn-sm" style="font-family: cursiva2;" th:href="@{/book/eliminarBook/} + ${ID}"
-			th:text="Eliminar" onclick="return confirm('Estas seguro que deseas eliminar el producto?');">
-		</a>
 		</div>
 	</div>
 	</div>

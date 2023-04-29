@@ -20,7 +20,19 @@ public class Game implements Serializable
 	private String nombre;
 	private String Descripcion;
 	private Double precio;
-	private String image;	
+	private String image;
+	private String downloadLink;
+	
+	
+	
+
+	public String getDownloadLink() {
+		return downloadLink;
+	}
+
+	public void setDownloadLink(String downloadLink) {
+		this.downloadLink = downloadLink;
+	}
 
 	public String getImage() 
 	{

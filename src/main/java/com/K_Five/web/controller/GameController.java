@@ -136,6 +136,7 @@ public class GameController
 		model.put("descripcion", game.getDescripcion());
 		model.put("precio", game.getPrecio());
 		model.put("image", game.getImage());
+		model.put("link", game.getDownloadLink());
 		return "/Games/card";
 	}
 	
